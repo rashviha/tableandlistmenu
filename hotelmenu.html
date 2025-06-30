@@ -1,197 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Essentric</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #c5bbbb;
-			margin: 0;
-			padding: 20px;
-		}
-		h1 {
-			text-align: center;
-			color: #ffffff;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-style: italic;
-			font-size: 2.5em;
-			margin-bottom: 20px;
-		}
-		h2{
-			font-family: Georgia, 'Times New Roman', Times, serif;
-			font-style: italic;
-		}
-		header{
-			background-color: #300303;
-			color: white;
-			padding: 10px 0;
-			text-align: center;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-style: italic;
-		}
-		img{
-			width: 1545px;
-			height: 600px;
-		}
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin: 20px 0;
-		}
-		th, td {
-			border: 1px solid #000000;
-			padding: 8px;
-			text-align: center;
-		}
-		th {
-			background-color: #300303;
-			color: white;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-style: italic;
-			font-size: larger;
-		}
-		.meal{
-			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-			font-size: 1.3em;
-		}
-		td{
-			font-family:Georgia, 'Times New Roman', Times, serif	
-			}
-		ul {
-			list-style-type: disc;
-			padding-left: 20px;
-			display: inline-block; 
-			margin-right: 20px; 
-			font-size:1.3em;
-			font-style: italic;
-			font-family: fantasy;
-		}
-		.details {
-			margin-top: 20px;
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Moonlight Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0 20px 40px;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c0808;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+      font-style: normal;
+      box-shadow: 0 4px 8px rgb(44 8 8 / 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+      font-family: 'Georgia', serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 30px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+    }
+
+    img.hero {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0 40px;
+      font-size: 1rem;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #2c0808;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    tr.meal-category td {
+      background-color: #f4f4f4;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 1.2rem;
+      color: #2c0808;
+      padding-top: 18px;
+      padding-bottom: 8px;
+    }
+
+    td.amount {
+      width: 80px;
+      text-align: right;
+      font-weight: 600;
+      color: #2c0808;
+    }
+
+    .details {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .details h2 {
+      font-family: 'Georgia', serif;
+      font-weight: 600;
+      font-style: normal;
+      color: #2c0808;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #2c0808;
+      padding-bottom: 5px;
+    }
+
+    .details ul {
+      list-style: inside disc;
+      margin-bottom: 20px;
+      padding-left: 0;
+      line-height: 1.5;
+    }
+
+    .details ul li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      main, .details {
+        margin: 15px 0;
+        padding: 15px;
+      }
+
+      table th, table td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+      }
+
+      img.hero {
+        height: 250px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header><h1>Hotel Menu</h1></header>
-<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/420477756.jpg?k=85df4f6bf083f00f57f7e8797ca7b5130824055dc226e25d52611c0881928cd2&o=&hp=1">
-	<table>
-		<tr>
-			<th>Meal</th>
-			<th>Dish</th>
-			<th>Serving Time</th>
-			<th>Amount</th> 
-		<tr>
-			<td class="meal" rowspan="5">Breakfast</td>
-			<td>Pancakes</td>
-			<td>7:00 AM - 10:00 AM</td>
-			<td>$5</td> 
-		</tr>
-		<tr>
-			<td>Omelette</td>
-			<td>7:00 AM - 10:00 AM</td>
-			<td>$6</td>
-		</tr>
-		<tr>
-			<td>Fruit Salad</td>
-			<td>7:00 AM - 10:00 AM</td>
-			<td>$4</td>
-		</tr>
-		<tr>
-			<td>Toast</td>
-			<td>7:00 AM - 10:00 AM</td>
-			<td>$3</td>	
-		</tr>
-		<tr>
-			<td>Cereal</td>
-			<td>7:00 AM - 10:00 AM</td>
-			<td>$2</td> 
-		</tr>
-		<tr>
-			<td colspan="4" style="height: 20px;"></td> 
-		</tr>
-		<tr>
-			<td class="meal" rowspan="5">Lunch</td>
-			<td>Grilled Chicken</td>
-			<td>12:00 PM - 3:00 PM</td>
-			<td>$10</td> 
-		</tr>
-		<tr>
-			<td>Pasta Primavera</td>
-			<td>12:00 PM - 3:00 PM</td>
-			<td>$8</td> 
-		</tr>
-		<tr>
-			<td>Caesar Salad</td>
-			<td>12:00 PM - 3:00 PM</td>
-			<td>$7</td> 
-		</tr>
-		<tr>
-			<td>Beef Tacos</td>
-			<td>12:00 PM - 3:00 PM</td>
-			<td>$9</td> 
-		</tr>
-		<tr>
-			<td>Vegetable Stir Fry</td>
-			<td>12:00 PM - 3:00 PM</td>
-			<td>$6</td> 
-		</tr>
-		<tr>
-			<td colspan="4" style="height: 20px;"></td> 
-		</tr>
-		<tr>
-			<td class="meal" rowspan="5">Snacks</td>
-			<td>Nachos</td>
-			<td>3:00 PM - 5:00 PM</td>
-			<td>$4</td>
-		</tr>
-		<tr>
-			<td>Spring Rolls</td>
-			<td>3:00 PM - 5:00 PM</td>
-			<td>$5</td>
-		</tr>
-		<tr>
-			<td>Fruit Smoothie</td>
-			<td>3:00 PM - 5:00 PM</td>
-			<td>$3</td>
-		</tr>
-		<tr>
-			<td>Cookies</td>
-			<td>3:00 PM - 5:00 PM</td>
-			<td>$2</td>
-		</tr>
-		<tr>
-			<td>Chips</td>
-			<td>3:00 PM - 5:00 PM</td>
-			<td>$1</td>
-		</tr>
-	</table>
 
-	<div class="details">
-		<h2>Menu Details</h2>
-		<ul>
-			<li>Breakfast is served from 7:00 AM to 10:00 AM.</li>
-			<li>Lunch is served from 12:00 PM to 3:00 PM.</li>
-			<li>Snacks are available from 3:00 PM to 5:00 PM.</li>
-			<li>All prices are in USD.</li>
-			<li>Menu items may vary based on availability.</li>
-		</ul>
-		<ul>
-			<li>For any special requests, please inform the staff.</li>
-			<li>Reservations are recommended for large groups.</li>
-			<li>Takeaway options are available for all meals.</li>
-			<li>Complimentary water is provided with every meal.</li>
-			<li>Feedback is appreciated to improve our services.</li>
-		</ul>
-		<ul>
-			<li>All dishes are prepared with fresh ingredients.</li>
-			<li>Vegetarian options are available.</li>
-			<li>Special dietary requirements can be accommodated.</li>
-			<li>Ask our staff for daily specials.</li>
-			<li>Enjoy your meal!</li>
-		</ul>
-	</div>
+<header>
+  <h1>Hotel Moonlight Menu</h1>
+</header>
+
+<main>
+  <img
+    src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/420477756.jpg?k=85df4f6bf083f00f57f7e8797ca7b5130824055dc226e25d52611c0881928cd2&o=&hp=1"
+    alt="Hotel Moonlight Dining Area"
+    class="hero"
+  />
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dishes</th>
+        <th class="amount">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="meal-category">
+        <td colspan="2">Breakfast (7:00 AM to 10:00 AM)</td>
+      </tr>
+      <tr>
+        <td>Pancakes</td>
+        <td class="amount">$5</td>
+      </tr>
+      <tr>
+        <td>Omelette</td>
+        <td class="amount">$6</td>
+      </tr>
+      <tr>
+        <td>Fruit Salad</td>
+        <td class="amount">$4</td>
+      </tr>
+      <tr>
+        <td>Toast</td>
+        <td class="amount">$3</td>
+      </tr>
+      <tr>
+        <td>Cereal</td>
+        <td class="amount">$2</td>
+      </tr>
+
+      <tr class="meal-category">
+        <td colspan="2">Lunch (12:00 PM to 3:00 PM)</td>
+      </tr>
+      <tr>
+        <td>Grilled Chicken</td>
+        <td class="amount">$10</td>
+      </tr>
+      <tr>
+        <td>Pasta Primavera</td>
+        <td class="amount">$8</td>
+      </tr>
+      <tr>
+        <td>Caesar Salad</td>
+        <td class="amount">$7</td>
+      </tr>
+      <tr>
+        <td>Beef Tacos</td>
+        <td class="amount">$9</td>
+      </tr>
+      <tr>
+        <td>Vegetable Stir Fry</td>
+        <td class="amount">$6</td>
+      </tr>
+
+      <tr class="meal-category">
+        <td colspan="2">Snacks (3:00 PM to 5:00 PM)</td>
+      </tr>
+      <tr>
+        <td>Nachos</td>
+        <td class="amount">$4</td>
+      </tr>
+      <tr>
+        <td>Spring Rolls</td>
+        <td class="amount">$5</td>
+      </tr>
+      <tr>
+        <td>Fruit Smoothie</td>
+        <td class="amount">$3</td>
+      </tr>
+      <tr>
+        <td>Cookies</td>
+        <td class="amount">$2</td>
+      </tr>
+      <tr>
+        <td>Chips</td>
+        <td class="amount">$1</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<section class="details">
+  <h2>Menu Details</h2>
+
+  <ul>
+    <li>Breakfast is served from 7:00 AM to 10:00 AM.</li>
+    <li>Lunch is served from 12:00 PM to 3:00 PM.</li>
+    <li>Snacks are available from 3:00 PM to 5:00 PM.</li>
+    <li>All prices are in USD.</li>
+    <li>Menu items may vary based on availability.</li>
+  </ul>
+
+  <ul>
+    <li>For any special requests, please inform the staff.</li>
+    <li>Reservations are recommended for large groups.</li>
+    <li>Takeaway options are available for all meals.</li>
+    <li>Complimentary water is provided with every meal.</li>
+    <li>Feedback is appreciated to improve our services.</li>
+  </ul>
+
+  <ul>
+    <li>All dishes are prepared with fresh ingredients.</li>
+    <li>Vegetarian options are available.</li>
+    <li>Special dietary requirements can be accommodated.</li>
+    <li>Ask our staff for daily specials.</li>
+    <li>Enjoy your meal!</li>
+  </ul>
+</section>
 
 </body>
 </html>
